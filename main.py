@@ -18,6 +18,7 @@ logger = logging.getLogger(__name__)
 
 dotenv.load_dotenv()
 TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY")
 
 
 dp = Dispatcher()
@@ -80,7 +81,7 @@ async def handle_massege(message: types.Message):
 
     client = OpenAI(
     base_url="https://openrouter.ai/api/v1",
-    api_key="",
+    api_key=DEEPSEEK_API_KEY,
     )
 
 
